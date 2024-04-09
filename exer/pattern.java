@@ -1,4 +1,3 @@
-
 public class supermain {
 
     static void pattern() {
