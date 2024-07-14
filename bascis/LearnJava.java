@@ -1,4 +1,3 @@
-
 // Single-line comments start with //
 
 /*
@@ -21,6 +20,8 @@ Multi-line comments look like this.
 
 // Import ArrayList class inside of the java.util package
 import java.util.ArrayList;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 // Import all classes inside of java.security package
 import java.security.*;
 
@@ -28,22 +29,25 @@ public class LearnJava {
 
     // In order to run a java program, it must have a main method as an entry
     // point.
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
-    ///////////////////////////////////////
-    // Input/Output
-    ///////////////////////////////////////
+        ///////////////////////////////////////
+        // Input/Output
+        ///////////////////////////////////////
 
         /*
-        * Output
-        */
+         * Output
+         */
 
         // Use System.out.println() to print lines.
         System.out.println("Hello World!");
         System.out.println(
-            "Integer: " + 10 +
-            " Double: " + 3.14 +
-            " Boolean: " + true);
+                "Integer: " + 10 +
+                        " Double: " + 3.14 +
+                        " Boolean: " + true);
 
         // To print without a newline, use System.out.print().
         System.out.print("Hello ");
@@ -86,8 +90,8 @@ public class LearnJava {
         ///////////////////////////////////////
 
         /*
-        *  Variable Declaration
-        */
+         * Variable Declaration
+         */
         // Declare a variable using <type> <name>
         int fooInt;
         // Declare multiple variables of the same
@@ -95,8 +99,8 @@ public class LearnJava {
         int fooInt1, fooInt2, fooInt3;
 
         /*
-        *  Variable Initialization
-        */
+         * Variable Initialization
+         */
 
         // Initialize a variable using <type> <name> = <val>
         int barInt = 1;
@@ -105,13 +109,12 @@ public class LearnJava {
         // <name1> = <name2> = <name3> = <val>
         int barInt1, barInt2, barInt3;
         barInt1 = barInt2 = barInt3 = 1;
-    // Shorthand for multiple declarations
-    int barInt4 = 1, barInt5 = 2; 
-
+        // Shorthand for multiple declarations
+        int barInt4 = 1, barInt5 = 2;
 
         /*
-        *  Variable types
-        */
+         * Variable types
+         */
         // Byte - 8-bit signed two's complement integer
         // (-128 <= byte <= 127)
         byte fooByte = 100;
@@ -136,7 +139,8 @@ public class LearnJava {
         // L is used to denote that this variable value is of type Long;
         // anything without is treated as integer by default.
 
-        // Note: byte, short, int and long are signed. They can have positive and negative values.
+        // Note: byte, short, int and long are signed. They can have positive and
+        // negative values.
         // There are no unsigned variants.
         // char, however, is 16-bit unsigned.
 
@@ -163,6 +167,7 @@ public class LearnJava {
         final double E;
         E = 2.71828;
 
+        byte[] fooByteArray;
         // BigInteger - Immutable arbitrary-precision integers
         //
         // BigInteger is a data type that allows programmers to manipulate
@@ -209,9 +214,11 @@ public class LearnJava {
         // Output: Strings can be concatenated via + operator.
 
         // #2 - with StringBuilder
-        // This way doesn't create any intermediate strings. It just stores the string pieces, and ties them together
+        // This way doesn't create any intermediate strings. It just stores the string
+        // pieces, and ties them together
         // when toString() is called.
-        // Hint: This class is not thread safe. A thread-safe alternative (with some impact on performance) is StringBuffer.
+        // Hint: This class is not thread safe. A thread-safe alternative (with some
+        // impact on performance) is StringBuffer.
         StringBuilder builderConcatenated = new StringBuilder();
         builderConcatenated.append("You ");
         builderConcatenated.append("can use ");
@@ -219,16 +226,18 @@ public class LearnJava {
         System.out.println(builderConcatenated.toString()); // only now is the string built
         // Output: You can use the StringBuilder class.
 
-        // StringBuilder is efficient when the fully constructed String is not required until the end of some processing.
+        // StringBuilder is efficient when the fully constructed String is not required
+        // until the end of some processing.
         StringBuilder stringBuilder = new StringBuilder();
         String inefficientString = "";
-        for (int i = 0 ; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             stringBuilder.append(i).append(" ");
             inefficientString += i + " ";
         }
         System.out.println(inefficientString);
         System.out.println(stringBuilder.toString());
-        // inefficientString requires a lot more work to produce, as it generates a String on every loop iteration.
+        // inefficientString requires a lot more work to produce, as it generates a
+        // String on every loop iteration.
         // Simple concatenation with + is compiled to a StringBuilder and toString()
         // Avoid string concatenation in loops.
 
@@ -247,9 +256,9 @@ public class LearnJava {
         boolean boolArray[] = new boolean[100];
 
         // Another way to declare & initialize an array
-        int[] y = {9000, 1000, 1337};
-        String names[] = {"Bob", "John", "Fred", "Juan Pedro"};
-        boolean bools[] = {true, false, false};
+        int[] y = { 9000, 1000, 1337 };
+        String names[] = { "Bob", "John", "Fred", "Juan Pedro" };
+        boolean bools[] = { true, false, false };
 
         // Indexing an array - Accessing an element
         System.out.println("intArray @ 0: " + intArray[0]);
@@ -260,43 +269,43 @@ public class LearnJava {
 
         // Other data types worth checking out
         // ArrayLists - Like arrays except more functionality is offered, and
-        //              the size is mutable.
+        // the size is mutable.
         // LinkedLists - Implementation of doubly-linked list. All of the
-        //               operations perform as could be expected for a
-        //               doubly-linked list.
+        // operations perform as could be expected for a
+        // doubly-linked list.
         // Maps - A mapping of key Objects to value Objects. Map is
-        //        an interface and therefore cannot be instantiated.
-        //        The type of keys and values contained in a Map must
-        //        be specified upon instantiation of the implementing
-        //        class. Each key may map to only one corresponding value,
-        //        and each key may appear only once (no duplicates).
+        // an interface and therefore cannot be instantiated.
+        // The type of keys and values contained in a Map must
+        // be specified upon instantiation of the implementing
+        // class. Each key may map to only one corresponding value,
+        // and each key may appear only once (no duplicates).
         // HashMaps - This class uses a hashtable to implement the Map
-        //            interface. This allows the execution time of basic
-        //            operations, such as get and insert element, to remain
-        //            constant-amortized even for large sets.
+        // interface. This allows the execution time of basic
+        // operations, such as get and insert element, to remain
+        // constant-amortized even for large sets.
         // TreeMap - A Map that is sorted by its keys. Each modification
-        //           maintains the sorting defined by either a Comparator
-        //           supplied at instantiation, or comparisons of each Object
-        //           if they implement the Comparable interface.
-        //           Failure of keys to implement Comparable combined with failure to
-        //           supply a Comparator will throw ClassCastExceptions.
-        //           Insertion and removal operations take O(log(n)) time
-        //           so avoid using this data structure unless you are taking
-        //           advantage of the sorting.
+        // maintains the sorting defined by either a Comparator
+        // supplied at instantiation, or comparisons of each Object
+        // if they implement the Comparable interface.
+        // Failure of keys to implement Comparable combined with failure to
+        // supply a Comparator will throw ClassCastExceptions.
+        // Insertion and removal operations take O(log(n)) time
+        // so avoid using this data structure unless you are taking
+        // advantage of the sorting.
 
         ///////////////////////////////////////
         // Operators
         ///////////////////////////////////////
         System.out.println("\n->Operators");
 
-    int i1 = 1, i2 = 2;
+        int i1 = 1, i2 = 2;
 
         // Arithmetic is straightforward
         System.out.println("1+2 = " + (i1 + i2)); // => 3
         System.out.println("2-1 = " + (i2 - i1)); // => 1
         System.out.println("2*1 = " + (i2 * i1)); // => 2
         System.out.println("1/2 = " + (i1 / i2)); // => 0 (int/int returns int)
-        System.out.println("1/2.0 = " + (i1 / (double)i2)); // => 0.5
+        System.out.println("1/2.0 = " + (i1 / (double) i2)); // => 0.5
 
         // Modulo
         System.out.println("11%3 = " + (11 % 3)); // => 2
@@ -316,14 +325,14 @@ public class LearnJava {
 
         // Bitwise operators!
         /*
-        ~      Unary bitwise complement
-        <<     Signed left shift
-        >>     Signed/Arithmetic right shift
-        >>>    Unsigned/Logical right shift
-        &      Bitwise AND
-        ^      Bitwise exclusive OR
-        |      Bitwise inclusive OR
-        */
+         * ~ Unary bitwise complement
+         * << Signed left shift
+         * >> Signed/Arithmetic right shift
+         * >>> Unsigned/Logical right shift
+         * & Bitwise AND
+         * ^ Bitwise exclusive OR
+         * | Bitwise inclusive OR
+         */
 
         // Increment operators
         int i = 0;
@@ -377,29 +386,29 @@ public class LearnJava {
             System.out.println(fooFor);
             // Iterated 10 times, fooFor 0->9
         }
+        String fooFor;
         System.out.println("fooFor Value: " + fooFor);
 
         // Nested For Loop Exit with Label
-        outer:
-        for (int i = 0; i < 10; i++) {
-          for (int j = 0; j < 10; j++) {
-            if (i == 5 && j ==5) {
-              break outer;
-              // breaks out of outer loop instead of only the inner one
+        outer: for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (i == 5 && j == 5) {
+                    break outer;
+                    // breaks out of outer loop instead of only the inner one
+                }
             }
-          }
         }
 
         // For Each Loop
         // The for loop is also able to iterate over arrays as well as objects
         // that implement the Iterable interface.
-        int[] fooList = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] fooList = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         // for each loop structure => for (<object> : <iterable>)
         // reads as: for each element in the iterable
         // note: the object type must match the element type of the iterable.
         for (int bar : fooList) {
             System.out.println(bar);
-            //Iterates 9 times and prints 1-9 on new lines
+            // Iterates 9 times and prints 1-9 on new lines
         }
 
         // Switch Case
@@ -408,22 +417,27 @@ public class LearnJava {
         // String class, and a few special classes that wrap primitive types:
         // Character, Byte, Short, and Integer.
         // Starting in Java 7 and above, we can also use the String type.
-        // Note: Do remember that, not adding "break" at end any particular case ends up in
-        // executing the very next case(given it satisfies the condition provided) as well.
+        // Note: Do remember that, not adding "break" at end any particular case ends up
+        // in
+        // executing the very next case(given it satisfies the condition provided) as
+        // well.
         int month = 3;
         String monthString;
         switch (month) {
-            case 1: monthString = "January";
-                    break;
-            case 2: monthString = "February";
-                    break;
-            case 3: monthString = "March";
-                    break;
-            default: monthString = "Some other month";
-                     break;
+            case 1:
+                monthString = "January";
+                break;
+            case 2:
+                monthString = "February";
+                break;
+            case 3:
+                monthString = "March";
+                break;
+            default:
+                monthString = "Some other month";
+                break;
         }
         System.out.println("Switch Case Result: " + monthString);
-
 
         // Try-with-resources (Java 7+)
         // Try-catch-finally statements work as expected in Java but in Java 7+
@@ -439,7 +453,7 @@ public class LearnJava {
             // In Java 7, the resource will always be closed, even if it throws
             // an Exception.
         } catch (Exception ex) {
-            //The resource will be closed before the catch statement executes.
+            // The resource will be closed before the catch statement executes.
             System.out.println("readLine() failed.");
         }
         // No need for a finally statement in this case, the BufferedReader is
@@ -447,7 +461,6 @@ public class LearnJava {
         // a finally statement might not be called.
         // To learn more:
         // https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
-
 
         // Conditional Shorthand
         // You can use the '?' operator for quick assignments or logic forks.
@@ -460,7 +473,6 @@ public class LearnJava {
         // Or simply
         System.out.println("bar : " + (foo < 10 ? "A" : "B"));
 
-
         ////////////////////////////////////////
         // Converting Data Types
         ////////////////////////////////////////
@@ -468,10 +480,10 @@ public class LearnJava {
         // Converting data
 
         // Convert String To Integer
-        Integer.parseInt("123");//returns an integer version of "123"
+        Integer.parseInt("123");// returns an integer version of "123"
 
         // Convert Integer To String
-        Integer.toString(123);//returns a string version of 123
+        Integer.toString(123);// returns a string version of 123
 
         // For other conversions check out the following classes:
         // Double
@@ -503,14 +515,14 @@ public class LearnJava {
         // static Collections in an easy way. Usually you end up like this:
         private static final Set<String> COUNTRIES = new HashSet<String>();
         static {
-           COUNTRIES.add("DENMARK");
-           COUNTRIES.add("SWEDEN");
-           COUNTRIES.add("FINLAND");
+            COUNTRIES.add("DENMARK");
+            COUNTRIES.add("SWEDEN");
+            COUNTRIES.add("FINLAND");
         }
 
-        // There's a nifty way to achieve the same thing, 
+        // There's a nifty way to achieve the same thing,
         // by using something that is called Double Brace Initialization.
-        private static final Set<String> COUNTRIES_DOUBLE_BRACE = 
+        private static final Set<String> COUNTRIES_DOUBLE_BRACE =
         new HashSet<String>() {{
             add("DENMARK");
             add("SWEDEN");
@@ -526,39 +538,40 @@ public class LearnJava {
 
         // Another option was to initialize the Collection from an array,
         // using Arrays.asList() method:
-        private static final List<String> COUNTRIES_AS_LIST = 
-                        Arrays.asList("SWEDEN", "DENMARK", "NORWAY");
+        private static final List<String> COUNTRIES_AS_LIST = Arrays.asList("SWEDEN", "DENMARK", "NORWAY");
+
         // This has one catch: the list we get is internally backed by the array,
         // and since arrays can't change their size, the list backed by the array
-        // is not resizeable, which means we can't add new elements to it: 
+        // is not resizeable, which means we can't add new elements to it:
         public static void main(String[] args) {
             COUNTRIES.add("FINLAND"); // throws UnsupportedOperationException!
-            // However, we can replace elements by index, just like in array: 
+            // However, we can replace elements by index, just like in array:
             COUNTRIES.set(1, "FINLAND");
             System.out.println(COUNTRIES); // prints [SWEDEN, FINLAND, NORWAY]
         }
-        // The resizing problem can be circumvented 
+
+        // The resizing problem can be circumvented
         // by creating another Collection from the List:
-         private static final Set<String> COUNTRIES_SET = 
-                new HashSet<>(Arrays.asList("SWEDEN", "DENMARK", "NORWAY"));
-        // It's perfectly fine to add anything to the Set of COUNTRIES now. 
+        private static final Set<String> COUNTRIES_SET = new HashSet<>(Arrays.asList("SWEDEN", "DENMARK", "NORWAY"));
+        // It's perfectly fine to add anything to the Set of COUNTRIES now.
     } // End TestInitialization class
 
     private static class TestJava11Initialization {
         // Since Java 11, there is a convenient option to initialize Collections:
-        // Set.of() and List.of() methods. 
-        private static final Set<String> COUNTRIES = 
-                Set.of("SWEDEN", "DENMARK", "NORWAY");
-        // There is a massive catch, though: Lists and Sets initialized like this 
-        // 1) are immutable 
+        // Set.of() and List.of() methods.
+        private static final Set<String> COUNTRIES = Set.of("SWEDEN", "DENMARK", "NORWAY");
+
+        // There is a massive catch, though: Lists and Sets initialized like this
+        // 1) are immutable
         // 2) can't contain null elements (even check for null elements fails)!
         public static void main(String[] args) {
             COUNTRIES.add("FINLAND"); // throws UnsupportedOperationException
-            COUNTRIES.remove("NORWAY"); // throws UnsupportedOperationException 
+            COUNTRIES.remove("NORWAY"); // throws UnsupportedOperationException
             COUNTRIES.contains(null); // throws NullPointerException
         }
-        private static final Set<String> COUNTRIES_WITH_NULL = 
-                    Set.of("SWEDEN", null, "NORWAY"); // throws NullPointerException
+
+        private static final Set<String> COUNTRIES_WITH_NULL = Set.of("SWEDEN", null, "NORWAY"); // throws
+                                                                                                 // NullPointerException
 
     } // End TestJava11Initialization class
 } // End LearnJava class
@@ -568,15 +581,15 @@ public class LearnJava {
 
 // Class Declaration Syntax:
 // <public/private/protected> class <class name> {
-//    // data fields, constructors, functions all inside.
-//    // functions are called as methods in Java.
+// // data fields, constructors, functions all inside.
+// // functions are called as methods in Java.
 // }
 
 class Bicycle {
 
     // Bicycle's Fields/Variables
     public int cadence; // Public: Can be accessed from anywhere
-    private int speed;  // Private: Only accessible from within the class
+    private int speed; // Private: Only accessible from within the class
     protected int gear; // Protected: Accessible from the class and subclasses
     String name; // default: Only accessible from within this package
     static String className; // Static class variable
@@ -600,9 +613,10 @@ class Bicycle {
         speed = 5;
         name = "Bontrager";
     }
+
     // This is a constructor that takes arguments
     public Bicycle(int startCadence, int startSpeed, int startGear,
-        String name) {
+            String name) {
         this.gear = startGear;
         this.cadence = startCadence;
         this.speed = startSpeed;
@@ -624,27 +638,32 @@ class Bicycle {
     public void setCadence(int newValue) {
         cadence = newValue;
     }
+
     public void setGear(int newValue) {
         gear = newValue;
     }
+
     public void speedUp(int increment) {
         speed += increment;
     }
+
     public void slowDown(int decrement) {
         speed -= decrement;
     }
+
     public void setName(String newName) {
         name = newName;
     }
+
     public String getName() {
         return name;
     }
 
-    //Method to display the attribute values of this Object.
+    // Method to display the attribute values of this Object.
     @Override // Inherited from the Object class.
     public String toString() {
         return "gear: " + gear + " cadence: " + cadence + " speed: " + speed +
-            " name: " + name;
+                " name: " + name;
     }
 } // end class Bicycle
 
@@ -678,8 +697,8 @@ class PennyFarthing extends Bicycle {
 // Interfaces
 // Interface declaration syntax
 // <access-level> interface <interface-name> extends <super-interfaces> {
-//     // Constants
-//     // Method declarations
+// // Constants
+// // Method declarations
 // }
 
 // Example - Food:
@@ -690,6 +709,7 @@ public interface Edible {
 
 public interface Digestible {
     public void digest();
+
     // Since Java 8, interfaces can have default method.
     public default void defaultMethod() {
         System.out.println("Hi from default method ...");
@@ -712,7 +732,7 @@ public class Fruit implements Edible, Digestible {
 // In Java, you can extend only one class, but you can implement many
 // interfaces. For example:
 public class ExampleClass extends ExampleClassParent implements InterfaceOne,
-    InterfaceTwo {
+        InterfaceTwo {
     @Override
     public void InterfaceOneMethod() {
     }
@@ -728,8 +748,8 @@ public class ExampleClass extends ExampleClassParent implements InterfaceOne,
 // Abstract Class declaration syntax
 // <access-level> abstract class <abstract-class-name> extends
 // <super-abstract-classes> {
-//     // Constants and variables
-//     // Method declarations
+// // Constants and variables
+// // Method declarations
 // }
 
 // Abstract Classes cannot be instantiated.
@@ -743,41 +763,35 @@ public class ExampleClass extends ExampleClassParent implements InterfaceOne,
 // so consider other approaches using composition.
 // https://en.wikipedia.org/wiki/Composition_over_inheritance
 
-public abstract class Animal
-{
+public abstract class Animal {
     private int age;
 
     public abstract void makeSound();
 
     // Method can have a body
-    public void eat()
-    {
+    public void eat() {
         System.out.println("I am an animal and I am Eating.");
         // Note: We can access private variable here.
         age = 30;
     }
 
-    public void printAge()
-    {
+    public void printAge() {
         System.out.println(age);
     }
 
     // Abstract classes can have main method.
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println("I am abstract");
     }
 }
 
-class Dog extends Animal
-{
+class Dog extends Animal {
     // Note still have to override the abstract methods in the
     // abstract class.
     @Override
-    public void makeSound()
-    {
+    public void makeSound() {
         System.out.println("Bark");
-        // age = 30;    ==> ERROR!    age is private to Animal
+        // age = 30; ==> ERROR! age is private to Animal
     }
 
     // NOTE: You will get an error if you used the
@@ -785,8 +799,7 @@ class Dog extends Animal
     // overriding of static methods.
     // What is happening here is called METHOD HIDING.
     // Check out this SO post: http://stackoverflow.com/questions/16313649/
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Dog pluto = new Dog();
         pluto.makeSound();
         pluto.eat();
@@ -798,21 +811,19 @@ class Dog extends Animal
 
 // Final Class declaration syntax
 // <access-level> final <final-class-name> {
-//     // Constants and variables
-//     // Method declarations
+// // Constants and variables
+// // Method declarations
 // }
 
 // Final classes are classes that cannot be inherited from and are therefore a
 // final child. In a way, final classes are the opposite of abstract classes
 // because abstract classes must be extended, but final classes cannot be
 // extended.
-public final class SaberToothedCat extends Animal
-{
+public final class SaberToothedCat extends Animal {
     // Note still have to override the abstract methods in the
     // abstract class.
     @Override
-    public void makeSound()
-    {
+    public void makeSound() {
         System.out.println("Roar");
     }
 }
@@ -825,8 +836,7 @@ public abstract class Mammal()
 
     // Final methods, like, final classes cannot be overridden by a child
     // class, and are therefore the final implementation of the method.
-    public final boolean isWarmBlooded()
-    {
+    public final boolean isWarmBlooded() {
         return true;
     }
 }
@@ -881,7 +891,8 @@ public class EnumTest {
 
 // Enum types are much more powerful than we show above.
 // The enum body can include methods and other fields.
-// You can see more at https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+// You can see more at
+// https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
 
 // Getting Started with Lambda Expressions
 //
@@ -898,6 +909,7 @@ public class EnumTest {
 // above.
 //
 import java.util.Map;
+import java.util.Scanner;
 import java.util.HashMap;
 import java.util.function.*;
 import java.security.SecureRandom;
@@ -905,18 +917,18 @@ import java.security.SecureRandom;
 public class Lambdas {
     public static void main(String[] args) {
         // Lambda declaration syntax:
-    // <zero or more parameters> -> <expression body or statement block>
+        // <zero or more parameters> -> <expression body or statement block>
 
         // We will use this hashmap in our examples below.
         Map<String, String> planets = new HashMap<>();
-            planets.put("Mercury", "87.969");
-            planets.put("Venus", "224.7");
-            planets.put("Earth", "365.2564");
-            planets.put("Mars", "687");
-            planets.put("Jupiter", "4,332.59");
-            planets.put("Saturn", "10,759");
-            planets.put("Uranus", "30,688.5");
-            planets.put("Neptune", "60,182");
+        planets.put("Mercury", "87.969");
+        planets.put("Venus", "224.7");
+        planets.put("Earth", "365.2564");
+        planets.put("Mars", "687");
+        planets.put("Jupiter", "4,332.59");
+        planets.put("Saturn", "10,759");
+        planets.put("Uranus", "30,688.5");
+        planets.put("Neptune", "60,182");
 
         // Lambda with zero parameters using the Supplier functional interface
         // from java.util.function.Supplier. The actual lambda expression is
@@ -930,9 +942,9 @@ public class Lambdas {
         // found in Iterable, applies the lambda expression to each member of
         // the Collection. The default implementation of forEach behaves as if:
         /*
-            for (T t : this)
-                action.accept(t);
-        */
+         * for (T t : this)
+         * action.accept(t);
+         */
 
         // The actual lambda expression is the parameter passed to forEach.
         planets.keySet().forEach((p) -> System.out.format("%s\n", p));
@@ -960,9 +972,9 @@ public class Lambdas {
         // the Set of each Key -> Value pairs. This default implementation
         // behaves as if:
         /*
-            for (Map.Entry<K, V> entry : map.entrySet())
-                action.accept(entry.getKey(), entry.getValue());
-        */
+         * for (Map.Entry<K, V> entry : map.entrySet())
+         * action.accept(entry.getKey(), entry.getValue());
+         */
 
         // The actual lambda expression is the parameter passed to forEach.
         String orbits = "%s orbits the Sun in %s Earth days.\n";
@@ -985,44 +997,3 @@ public class Lambdas {
         // methods.
     }
 }
-
-Further Reading
-
-The links provided here below are just to get an understanding of the topic, feel free to Google and find specific examples.
-Official Oracle Guides
-
-    Java Tutorial Trail from Sun / Oracle
-    Java Access level modifiers
-    Object-Oriented Programming Concepts:
-        Inheritance
-        Polymorphism
-        Abstraction
-    Exceptions
-    Interfaces
-    Generics
-    Java Code Conventions
-    New features in Java 8:
-        Lambda expressions (functional programming)
-        Date and time API (java.time package)
-
-Online Practice and Tutorials
-
-    Learneroo.com - Learn Java
-    Codingbat.com
-    Codewars - Java Katas
-    University of Helsinki - Object-Oriented programming with Java
-
-Books
-
-    Head First Java
-    Thinking in Java
-    Objects First with Java
-    Java The Complete Reference
-
-Got a suggestion? A correction, perhaps? Open an Issue on the GitHub Repo, or make a pull request yourself!
-
-Originally contributed by Jake Prather, and updated by 61 contributors.
-Creative Commons License
-
-© 2024 Jake Prather, Jakukyo Friel, Madison Dickson, Simon Morgan, Zachary Ferguson, Cameron Schermerhorn, Rachel Stiyer, Michael Dähnert, Rob Rose, Sean Nam, Shawn M. Hanes
-

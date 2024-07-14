@@ -1,4 +1,13 @@
+Share this page
+Select theme:
+Learn X in Y minutes
+Where X=java
 
+Get the code: LearnJava.java
+
+Java is a general-purpose, concurrent, class-based, object-oriented computer programming language. Read more here.
+
+```java
 // Single-line comments start with //
 
 /*
@@ -106,7 +115,7 @@ public class LearnJava {
         int barInt1, barInt2, barInt3;
         barInt1 = barInt2 = barInt3 = 1;
     // Shorthand for multiple declarations
-    int barInt4 = 1, barInt5 = 2; 
+    int barInt4 = 1, barInt5 = 2;
 
 
         /*
@@ -508,9 +517,9 @@ public class LearnJava {
            COUNTRIES.add("FINLAND");
         }
 
-        // There's a nifty way to achieve the same thing, 
+        // There's a nifty way to achieve the same thing,
         // by using something that is called Double Brace Initialization.
-        private static final Set<String> COUNTRIES_DOUBLE_BRACE = 
+        private static final Set<String> COUNTRIES_DOUBLE_BRACE =
         new HashSet<String>() {{
             add("DENMARK");
             add("SWEDEN");
@@ -526,38 +535,38 @@ public class LearnJava {
 
         // Another option was to initialize the Collection from an array,
         // using Arrays.asList() method:
-        private static final List<String> COUNTRIES_AS_LIST = 
+        private static final List<String> COUNTRIES_AS_LIST =
                         Arrays.asList("SWEDEN", "DENMARK", "NORWAY");
         // This has one catch: the list we get is internally backed by the array,
         // and since arrays can't change their size, the list backed by the array
-        // is not resizeable, which means we can't add new elements to it: 
+        // is not resizeable, which means we can't add new elements to it:
         public static void main(String[] args) {
             COUNTRIES.add("FINLAND"); // throws UnsupportedOperationException!
-            // However, we can replace elements by index, just like in array: 
+            // However, we can replace elements by index, just like in array:
             COUNTRIES.set(1, "FINLAND");
             System.out.println(COUNTRIES); // prints [SWEDEN, FINLAND, NORWAY]
         }
-        // The resizing problem can be circumvented 
+        // The resizing problem can be circumvented
         // by creating another Collection from the List:
-         private static final Set<String> COUNTRIES_SET = 
+         private static final Set<String> COUNTRIES_SET =
                 new HashSet<>(Arrays.asList("SWEDEN", "DENMARK", "NORWAY"));
-        // It's perfectly fine to add anything to the Set of COUNTRIES now. 
+        // It's perfectly fine to add anything to the Set of COUNTRIES now.
     } // End TestInitialization class
 
     private static class TestJava11Initialization {
         // Since Java 11, there is a convenient option to initialize Collections:
-        // Set.of() and List.of() methods. 
-        private static final Set<String> COUNTRIES = 
+        // Set.of() and List.of() methods.
+        private static final Set<String> COUNTRIES =
                 Set.of("SWEDEN", "DENMARK", "NORWAY");
-        // There is a massive catch, though: Lists and Sets initialized like this 
-        // 1) are immutable 
+        // There is a massive catch, though: Lists and Sets initialized like this
+        // 1) are immutable
         // 2) can't contain null elements (even check for null elements fails)!
         public static void main(String[] args) {
             COUNTRIES.add("FINLAND"); // throws UnsupportedOperationException
-            COUNTRIES.remove("NORWAY"); // throws UnsupportedOperationException 
+            COUNTRIES.remove("NORWAY"); // throws UnsupportedOperationException
             COUNTRIES.contains(null); // throws NullPointerException
         }
-        private static final Set<String> COUNTRIES_WITH_NULL = 
+        private static final Set<String> COUNTRIES_WITH_NULL =
                     Set.of("SWEDEN", null, "NORWAY"); // throws NullPointerException
 
     } // End TestJava11Initialization class
@@ -986,6 +995,8 @@ public class Lambdas {
     }
 }
 
+```
+
 Further Reading
 
 The links provided here below are just to get an understanding of the topic, feel free to Google and find specific examples.
@@ -1024,5 +1035,4 @@ Got a suggestion? A correction, perhaps? Open an Issue on the GitHub Repo, or ma
 Originally contributed by Jake Prather, and updated by 61 contributors.
 Creative Commons License
 
-© 2024 Jake Prather, Jakukyo Friel, Madison Dickson, Simon Morgan, Zachary Ferguson, Cameron Schermerhorn, Rachel Stiyer, Michael Dähnert, Rob Rose, Sean Nam, Shawn M. Hanes
-
+Â© 2024 Jake Prather, Jakukyo Friel, Madison Dickson, Simon Morgan, Zachary Ferguson, Cameron Schermerhorn, Rachel Stiyer, Michael DÃ¤hnert, Rob Rose, Sean Nam, Shawn M. Hanes
