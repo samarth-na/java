@@ -4,40 +4,37 @@ public class expert {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter first number ");
+        try (Scanner sc = new Scanner(System.in);) {
 
-        int num1 = sc.nextInt();
-        System.out.println("Enter second number ");
+            System.out.println("Enter first number ");
 
-        int num2 = sc.nextInt();
-        System.out.println("Enter Operator (+, -, *, /) ");
+            int num1 = sc.nextInt();
+            System.out.println("Enter second number ");
 
-        char op = sc.next().charAt(0);
+            int num2 = sc.nextInt();
+            System.out.println("Enter Operator (+, -, *, /) ");
 
-        // aditya tune ye kiya tha jo upar hai vo sahi hai
-        // char op = sc.nextchar();
+            char op = sc.next().charAt(0);
+            switch (op) {
+                case ('+'):
+                    System.out.println("Your sum is : " + (num1 + num2));
+                    break;
 
-        switch (op) {
-            case ('+'):
-                System.out.println("Your sum is : " + (num1 + num2));
-                break;
+                case ('-'):
+                    System.out.println("Your difference is : " + (num1 - num2));
+                    break;
 
-            case ('-'):
-                System.out.println("Your difference is : " + (num1 - num2));
-                break;
+                case ('*'):
+                    System.out.println("Your multiply is : " + (num1 * num2));
+                    break;
 
-            case ('*'):
-                System.out.println("Your multiply is : " + (num1 * num2));
-                break;
+                case ('/'):
+                    System.out.println("Your division is : " + (num1 / num2));
+                    break;
 
-            case ('/'):
-                System.out.println("Your division is : " + (num1 / num2));
-                break;
-
-            default:
-                System.out.println("INVALID!!! OPERATOR");
+                default:
+                    System.out.println("INVALID!!! OPERATOR");
+            }
         }
-
     }
 }
