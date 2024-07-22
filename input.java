@@ -1,28 +1,29 @@
 import java.util.Scanner;
 
-class hello {
+class Hello {
 
-    public static void main(String args[]) {
-
-        System.out.println("this shit runs ");
-
-        Scanner s = new Scanner(System.in);
-        int aa = s.nextInt();
-        int bb = s.nextInt();
-        int a = new Scanner(System.in).nextInt();
-        int b = new Scanner(System.in).nextInt();
-        int c = add(aa, bb);
-        System.out.println(c);
-
-        for (int i = 0; i < 10; i++) {
-            System.out.println("this is not a test" + i);
-        }
+    public final static int add(int a, int b) {
+        return a + b;
     }
 
-    public static int add(int a, int b) {
+    public static void main(String args[], Scanner scan) {
+        System.out.println("this runs");
 
-        return a + b;
+        try (Scanner scann = new Scanner(System.in);) {
 
+            int a = scan.nextInt();
+            int b = scan.nextInt();
+            int c = scan.nextInt();
+            ci
+            int d = scan.nextInt();
+
+            System.out.println(add(a, b));
+            System.out.println(add(c, d));
+
+            for (int i = 0; i < 10; i++) {
+                System.out.println("this is not a test " + i);
+            }
+        }
     }
 
 }
