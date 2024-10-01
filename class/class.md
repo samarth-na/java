@@ -28,26 +28,25 @@ Here's a detailed explanation of classes in Java, along with code examples:
        }
    }
    ```
---------------------------------------------------------------------------------------
+---
 
    In this example, the `Person` class has two instance variables (`name` and `age`), a constructor that initializes these variables, and two instance methods (`introduce()` and `birthday()`).
 
---------------------------------------------------------------------------------------
 2. **Creating Objects**:
    To use the functionality defined in a class, you need to create an object of that class. You can create an object using the `new` keyword followed by the class name and parentheses.
 
-   ```java
-   public class Main {
-       public static void main(String[] args) {
-           // Create a new Person object
-           Person person = new Person("Alice", 25);
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Create a new Person object
+        Person person = new Person("Alice", 25);
 
-           // Call the instance methods
-           person.introduce();
-           person.birthday();
-       }
-   }
-   ```
+        // Call the instance methods
+        person.introduce();
+        person.birthday();
+    }
+}
+```
 --------------------------------------------------------------------------------------
 
    In this example, we create a `Person` object named `person` and then call the `introduce()` and `birthday()` methods on that object.
