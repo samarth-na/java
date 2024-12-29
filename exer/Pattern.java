@@ -1,5 +1,4 @@
-public class supermain {
-
+public class Pattern {
     static void pattern() {
         int[] x = { 1, 2, 3, 4, 5 };
         for (int i : x) {
